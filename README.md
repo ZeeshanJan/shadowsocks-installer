@@ -55,14 +55,29 @@ sudo ./install.sh --dry-run
 ### Using `config.json.template`
 
 If you prefer to define your configuration manually, you can copy and edit the template:
+
 ```bash
 cp config.json.template /etc/shadowsocks-libev/config.json
 ```
 
+Then edit the file to match your desired settings:
+```bash
+sudo nano /etc/shadowsocks-libev/config.json
+```
+
+Once configured, run the installer without flags:
+
+```bash
+sudo ./install.sh
+```
+
+
 ## File Structure
+```
 shadowsocks-installer/
 ├── install.sh               # Main installer script
 ├── config.json.template     # Sample config for manual use
 ├── LICENSE                  # MIT License
 ├── README.md                # This file
 └── .github/workflows/ci.yml # GitHub Actions workflow
+```
