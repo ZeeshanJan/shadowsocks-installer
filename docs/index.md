@@ -1,6 +1,12 @@
-# Shadowsocks Installer
+---
+layout: default
+title: Shadowsocks Installer
+---
+<p align="center">
+  <img src="./assets/hero.png" alt="Shadowsocks Installer" style="width:100%; max-height:250px; object-fit:cover;" />
+</p>
 
-![Project Illustration](./assets/hero.png)
+# Shadowsocks Installer
 
 A modular, automated Bash installer for [Shadowsocks‑libev](https://shadowsocks.org/) on Ubuntu.  
 Secure, simple, and extensible — set up your proxy server in minutes.
