@@ -1,0 +1,41 @@
+name: CI & Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  lint:
+    name: ShellCheck Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install ShellCheck
+        run: sudo apt-get install -y shellcheck
+
+      - name: Run ShellCheck
+        run: shellcheck install.sh
+
+  release:
+    name: Auto Publish Release
+    needs: lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Shadowsocks Installer ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          files: |
+            install.sh
+            config.json.template
+            LICENSE
+            README.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
