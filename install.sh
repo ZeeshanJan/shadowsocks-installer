@@ -58,7 +58,7 @@ load_config_fallback() {
 
 prompt_user_input() {
   if [ -z "$SS_PASSWORD" ]; then
-    read -s -p "Enter Shadowsocks password: " SS_PASSWORD
+    read -rs -p "Enter Shadowsocks password: " SS_PASSWORD
     echo
   fi
 }
