@@ -81,3 +81,7 @@ shadowsocks-installer/
 ├── README.md                # This file
 └── .github/workflows/ci.yml # GitHub Actions workflow
 ```
+
+## OpenSource
+
+Contributions, suggestions, and improvements are always welcome — feel free to fork, submit issues, or open pull requests.
